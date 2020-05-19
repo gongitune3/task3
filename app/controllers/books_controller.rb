@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def top
   end
-  
+
   def index
   end
 
@@ -9,9 +9,10 @@ class BooksController < ApplicationController
   end
 
   def new
+    
   end
 
-  def ceate
+  def create
     @books = Book.new
   end
 
