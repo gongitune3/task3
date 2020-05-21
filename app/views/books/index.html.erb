@@ -6,16 +6,16 @@
         <th>Opinion</th>
       </tr>
     </thead>
-        <tr>
+    <tbody>
     <% @books.each do |book| %>
-      <tbody>
+      <tr>
         <td>
             <%= book.title %>
         </td>
         <td>
             <%= book.body %>
         </td>
-      </tbody>
       </tr>
     <% end %>
+  </tbody>
 </table>

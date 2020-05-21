@@ -12,15 +12,14 @@
   <body>
     <% if user_signed_in? %>
       <%= link_to "Home", user_path(current_user.id) %>
-      <%= link_to "Users" "/" %>
-      <%= link_to "Books"  %>
+      <%= link_to "Users", root_path %>
+      <%= link_to "Books", books_path %>
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Home" "/"%>
-      <%= link_to "About"  books_about %>
-      <%= link_to "sign up" new_user_registration %>
-      <%= link_to "login" new_user_session %>
-      
+      <%= link_to "Home", "/"%>
+      <%= link_to "About",  books_about_path %>
+      <%= link_to "sign up", new_user_registration_path %>
+      <%= link_to "login", new_user_session_path %>
     <% end %>
     <%= yield %>
   </body>
