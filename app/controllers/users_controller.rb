@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+    def top
+    end
+    
     def show
         @user = User.find(params[:id])
-        @post_images = @user.post_images.page(params[:page]).reverse_order
+        @books = @user.books.page(params[:page])
+        @book =  Book.new
     end
 
     def edit
