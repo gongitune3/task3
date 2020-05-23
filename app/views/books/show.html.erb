@@ -1,2 +1,24 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>User info</h2>
+<div class="profile-container">
+    <h3 class="profile-name"><%= @user.name %></h3>
+    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+    <p><%= @user.introduction %></p>
+</div>
+
+<%= link_to "//", edit_user_path(@user.id) %>
+
+<%= form_for(@book) do |f| %>
+
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+ 
+    <h4>Opinion</h4>
+    <%= f.text_area :body %>
+ 
+    <%= f.submit 'Create book' %>
+ 
+<% end %>
+
+<h1>Book detail</h2>
+
+

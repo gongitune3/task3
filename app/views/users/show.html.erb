@@ -1,7 +1,8 @@
+<h1>User info</h2>
 <div class="profile-container">
     <h3 class="profile-name"><%= @user.name %></h3>
     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-    <%= @user.introduction %>
+    <p><%= @user.introduction %></p>
 </div>
 
 <%= link_to "//", edit_user_path(@user.id) %>
@@ -17,6 +18,7 @@
     <%= f.submit 'Create book' %>
  
 <% end %>
+<h1>Books</h1>
     <table>
     <tbody>
         <% @books.each do |book| %>
