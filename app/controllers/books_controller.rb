@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
   
   def top
   end
@@ -38,6 +39,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
+      flash[:notice] = "You have updated book successfully."
       redirect_to @book
     else
       render :edit
