@@ -4,9 +4,25 @@
       
       <h1>User info</h2>
       <div class="profile-container">
-          <h3><%= @book.user.name %></h3>
           <%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-          <p><%= @book.user.introduction %></p>
+          <table class="table table-hover">
+            <tr>
+              <td>
+                <p>name<p>
+              </td>
+              <td>
+                <%= current_user.name %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>introduction</p>
+              </td>
+              <td>
+                <%= current_user.introduction %>
+              </td>
+            </tr>
+          </table>
       </div>
 
       <%= link_to "//", edit_user_path(current_user.id) %>

@@ -4,9 +4,25 @@
       <%= flash[:notice] %>
       <h1>User info</h2>
       <div class="profile-container">
-          <h3 class="profile-name"><%= current_user.name %></h3>
           <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
-          <p><%= current_user.introduction %></p>
+            <table class="table table-hover">
+            <tr>
+              <td>
+                <p>name<p>
+              </td>
+              <td>
+                <%= current_user.name %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>introduction</p>
+              </td>
+              <td>
+                <%= current_user.introduction %>
+              </td>
+            </tr>
+          </table>
       </div>
       
 
