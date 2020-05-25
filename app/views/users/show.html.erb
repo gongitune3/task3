@@ -1,7 +1,7 @@
 <div class='container'>                    
   <div class='row'>
     <div class='col-xs-3'>
-
+        <%= flash[:notice] %>
         <h1>User info</h2>
         <div class="profile-container">
             <h3 class="profile-name"><%= @user.name %></h3>
@@ -35,7 +35,7 @@
             <%= f.submit 'Create Book' %>
 
         <% end %>
-        <%= flash[:notice] %>
+        
 
         </div>
 
